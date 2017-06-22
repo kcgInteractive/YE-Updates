@@ -31,6 +31,7 @@ map.on('load', function() {
         mountainwestRegion = $('.mountainwest_region'),
         eastRegion = $('.east_region'),
         westRegion = $('.west_region'),
+        pacificRegion = $('.pacific_region'),
         closeButton = $('.map_info_window .close_btn');
 
     // Set Central Region as the initial filter
@@ -50,7 +51,7 @@ map.on('load', function() {
     //Show Central Regions
     centralRegion.click(function() {
       var regionTest=getLocationCookie("georgia");
-			if (regionTest == ""){
+            if (regionTest == ""){
               setLocationCookie('location','Central',30);}
       console.log("set");
         map.setFilter('ye-central-region', ['in', 'postal', 'TX', 'KS', 'MO', 'OK']);
@@ -70,7 +71,7 @@ map.on('load', function() {
     //Show mountainwest Regions
     mountainwestRegion.click(function() {
       var regionTest=getLocationCookie("georgia");
-			if (regionTest == ""){
+            if (regionTest == ""){
       setLocationCookie('location','MountianWest',30);}
       console.log("set");
         map.setFilter('ye-central-region', ['in', 'postal', 'AZ']);
@@ -89,10 +90,32 @@ map.on('load', function() {
        $('html, .region_display').scrollTop(0); 
     });
 
+    //Show Pacific Regions
+    pacificRegion.click(function() {
+      var regionTest=getLocationCookie("georgia");
+            if (regionTest == ""){
+      setLocationCookie('location','Pacific',30);}
+      console.log("set");
+        map.setFilter('ye-central-region', ['in', 'postal', 'CA']);
+        map.flyTo({
+            zoom: 5.5,
+            center: [-118.794, 37.059],
+            speed: 1,
+            bearing: 0,
+            pitch: 0,
+            curve: 1
+        });
+        
+         //$('html, .region_display').animate({scrollTop}, 500);                                    
+        //Load JSON data WHERE region is defined as mountainwestRegion
+        //Display mountainwestRegion Areas LINKS
+       $('html, .region_display').scrollTop(0); 
+    });
+
     //Show East Regions
     eastRegion.click(function() {
       var regionTest=getLocationCookie("georgia");
-			if (regionTest == ""){
+            if (regionTest == ""){
       setLocationCookie('location','East',30);}
       console.log("set");
         map.setFilter('ye-central-region', ['in', 'postal', 'GA', 'NC', 'MI', 'KY']);
@@ -147,44 +170,44 @@ map.on('load', function() {
 
     // show central to start
     var centralTab = $('li[data-region-node-id="' + centralNodeId + '"]');
-			var region=getLocationCookie("location");
-			if (region != "") {
-				switch (region) {
-					case 'MountianWest':
-					centralTab = $('li[data-region-node-id="' + 130 + '"]');
-					break;
-					case 'Central':
+            var region=getLocationCookie("location");
+            if (region != "") {
+                switch (region) {
+                    case 'MountianWest':
+                    centralTab = $('li[data-region-node-id="' + 130 + '"]');
+                    break;
+                    case 'Central':
                     centralTab = $('li[data-region-node-id="' + 129 + '"]');
-					break;
-					case 'East':
-					centralTab = $('li[data-region-node-id="' + 131 + '"]');
-					break;
-				}
-			} 
+                    break;
+                    case 'East':
+                    centralTab = $('li[data-region-node-id="' + 131 + '"]');
+                    break;
+                }
+            } 
     $(centralTab).click();
 });
 function setLocationCookie(cname,cvalue,exdays) {
-			var d = new Date();
-			d.setTime(d.getTime() + (exdays*24*60*60*1000));
-			var expires = "expires=" + d.toGMTString();
-			document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-		}
+            var d = new Date();
+            d.setTime(d.getTime() + (exdays*24*60*60*1000));
+            var expires = "expires=" + d.toGMTString();
+            document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+        }
 
 function getLocationCookie(cname) {
-			var name = cname + "=";
-			var decodedCookie = decodeURIComponent(document.cookie);
-			var ca = decodedCookie.split(';');
-			for(var i = 0; i < ca.length; i++) {
-				var c = ca[i];
-				while (c.charAt(0) == ' ') {
-					c = c.substring(1);
-				}
-				if (c.indexOf(name) == 0) {
-					return c.substring(name.length, c.length);
-				}
-			}
-			return "";
-		}
+            var name = cname + "=";
+            var decodedCookie = decodeURIComponent(document.cookie);
+            var ca = decodedCookie.split(';');
+            for(var i = 0; i < ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
 
 
 function ClearSchools() {
