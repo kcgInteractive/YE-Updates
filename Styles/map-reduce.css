@@ -1,0 +1,35 @@
+.map-copy p, .region_tabs li span, .region_display h4, ul.region_area_listing > li{font-size:smaller;}
+.regional_detail_2 a, .region_area_manager_and_office p, .regional_detail_2.map_cta a{font-size:smaller!important;margin-bottom: 1.2em!important;}
+.region_display h4 span {font-size:inherit;}
+#regionalShare [class^="ye-icon-"]:before, #regionalShare [class*=" ye-icon-"]:before {
+    font: normal normal normal 18px/1 FontAwesome!important;}
+footer{display:none;}
+.mapbox_container {
+    /* height: 35rem; */
+    height: calc(100vh - 108px)!important;
+    width: 50%;
+    float: right;
+}
+.row.nav_offset {
+    height: 103px!important;
+}
+.region_area regional_area_item{background-color:#eee;}
+/*#p_lt_WebPartZone2_Page_pageplaceholder_p_lt_WebPartZone2_Map_YE_Locations__rptRegions_ctl04__ulRegionDetail {width:43%!important;}*/
+.region_area_listing,.region_area_header {width:43%!important;}
+
+.region_area_manager_and_office{width:52%!important;}
+/*.region_area.regional_area_item{padding-left:2em!important;padding-right:2em!important;padding-top:0em!important;padding-bottom:1em!important;}*/
+.sidebar{line-height: inherit!important;}
+.region_area_manager_and_office p, .region_display ul li span {color: #4A4A4A;line-height:.2em!important;}
+.school_info_group p{font-size:smaller!important; margin-bottom: .2em; line-height: 1em!important;}
+.region_area_school{min-height: 9rem!important;max-height: 9rem; margin-right: .3%!important; width:33%!important;}
+.region_display a {font-size:1em; line-height:1.25em;}
+.region_display ul li span {font-size:smaller;}
+.region_office{margin-top: 1rem!important;}
+.ye_lt_gray h4:first-child{
+    padding-left: 1.5rem;
+    padding-top: 1rem;
+    font-size: 1em;
+    text-transform: uppercase;
+    font-weight: 100;
+    padding-bottom: 0;}

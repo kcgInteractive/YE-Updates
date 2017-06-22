@@ -1,0 +1,33 @@
+#BBPanelHeading{display:none;}
+.BBFormContainer{padding:0px!important;}
+
+#mongo-form
+
+    {font-family: "azo-sans-web", sans-serif!important;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 175%;
+    color: #4A4A4A;}
+
+#mongo-form select{
+  color:#4A4A4A;
+  text-transform:capitalize;
+  }
+
+#bboxevent_btnSubmit {
+    background: #95C637;
+    color: #fff;
+  padding: .5rem 1.5rem;
+    margin: .25rem;
+    font-family: "azo-sans-web", sans-serif;
+    font-size: .8125rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.BBFormPricingTable{
+  background: url(http://koch-ye-dev-2016.bluemod.us/Koch-YEDevSite/media/images/pattern_gray.jpg)!important;}
+  
+#bboxdonation_btnSubmit, .BBFormRadioLabelGivingLevelSelected{background-color:#95C637!important;border-radius: 2px; font-size: 1em;}
+#bboxdonation_btnSubmit:hover{background-color:#357B1A!important;}
