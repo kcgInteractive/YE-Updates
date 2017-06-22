@@ -209,10 +209,62 @@ function getLocationCookie(cname) {
     return "";
 }
 
-//location scripts
-$.get("http://ipinfo.io", function (response) {
-    console.log(response.city);
-}, "jsonp");
+//location scripts 
+var states = [];
+// $.get("http://ipinfo.io", function (response) {
+//     console.log(response.city);
+// }, "jsonp");
+
+$.getJSON('//freegeoip.net/json/?callback=?', function(data) {
+  setRegion(data.region_name);
+});
+function setRegion(region_name){
+    switch(region_name){
+        case "Georgia":
+            console.log("found georga");
+            break;
+        case "North Carolina":
+            console.log("found North Carolina");
+            break;
+        case "Kentucky":
+            console.log("found Kentucky");
+            break;
+        case "Michigan":
+            console.log("found Michigan");
+            break;
+        case "Kansas":
+            console.log("found Kansas");
+            break;
+        case "Georgia":
+            console.log("found georga");
+            break;
+        case "Georgia":
+            console.log("found georga");
+            break;
+    }
+}
+
+// jQuery.getScript('https://maps.google.com/maps/api/js?sensor=false&libraries=drawing&v=3.7');
+
+// jQuery.getScript('https://maps.google.com/maps/api/js?key=AIzaSyB61nsxcmC9nBJP8EHeWKhvqt7vFfvc7LM');
+// $(document).ready(function() {
+//     var latlng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+//     console.log(latlng);
+//     function error(msg) {
+//       var s = document.querySelector('#status');
+//       s.innerHTML = typeof msg == 'string' ? msg : "failed";
+//       s.className = 'fail';
+
+//   // console.log(arguments);
+// }
+
+// if (navigator.geolocation) {
+//   navigator.geolocation.getCurrentPosition(success, error);
+// } else {
+//   error('not supported');
+// }
+// });
+
 
 function ClearSchools() {
     // wrapping in try catch since it may not exist (i.e. initial load)
