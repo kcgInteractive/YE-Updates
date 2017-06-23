@@ -231,7 +231,6 @@ function getLocationCookie(cname) {
         var c = ca[i];
         while (c.charAt(0) == ' ') {
             c = c.substring(1);
-<<<<<<< HEAD
         }
         if (c.indexOf(name) == 0) {
             return c.substring(name.length, c.length);
@@ -239,41 +238,6 @@ function getLocationCookie(cname) {
     }
     return "";
 }
-
-//location scripts 
-// $.get("http://ipinfo.io", function (response) {
-//     console.log(response.city);
-// }, "jsonp");
-
-// jQuery.getScript('https://maps.google.com/maps/api/js?sensor=false&libraries=drawing&v=3.7');
-
-// jQuery.getScript('https://maps.google.com/maps/api/js?key=AIzaSyB61nsxcmC9nBJP8EHeWKhvqt7vFfvc7LM');
-// $(document).ready(function() {
-//     var latlng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-//     console.log(latlng);
-//     function error(msg) {
-//       var s = document.querySelector('#status');
-//       s.innerHTML = typeof msg == 'string' ? msg : "failed";
-//       s.className = 'fail';
-
-//   // console.log(arguments);
-// }
-
-// if (navigator.geolocation) {
-//   navigator.geolocation.getCurrentPosition(success, error);
-// } else {
-//   error('not supported');
-// }
-// });
-=======
-        }
-        if (c.indexOf(name) == 0) {
-            return c.substring(name.length, c.length);
-        }
-    }
-    return "";
-}
->>>>>>> master
 
 
 function ClearSchools() {
