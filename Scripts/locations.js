@@ -1,9 +1,9 @@
 var bounds = [
-    [-94.746094, 41.967659],
-    [-54.672, 56.208]
+[-94.746094, 41.967659],
+[-54.672, 56.208]
 ]
 mapboxgl.accessToken =
-    'pk.eyJ1IjoiY2FsZWJzd2FuazExIiwiYSI6ImNpbnJqZWkwYzEwbWp1aWtqcGczZmxjejMifQ.sflgeSLhss3BWstoHaPyyw';
+'pk.eyJ1IjoiY2FsZWJzd2FuazExIiwiYSI6ImNpbnJqZWkwYzEwbWp1aWtqcGczZmxjejMifQ.sflgeSLhss3BWstoHaPyyw';
 
 var map = new mapboxgl.Map({
     container: 'map',
@@ -25,117 +25,117 @@ map.on('load', function() {
     $('.spinner').remove();
     //end generics
     var removeFilter = $('.remove_filters'),
-        allRegions = $('.all_regions'),
-        centralRegion = $('.central_region'),
-        northeastRegion = $('.northeast_region'),
-        mountainwestRegion = $('.mountainwest_region'),
-        eastRegion = $('.east_region'),
-        westRegion = $('.west_region'),
-        pacificRegion = $('.pacific_region'),
-        closeButton = $('.map_info_window .close_btn');
+    allRegions = $('.all_regions'),
+    centralRegion = $('.central_region'),
+    northeastRegion = $('.northeast_region'),
+    mountainwestRegion = $('.mountainwest_region'),
+    eastRegion = $('.east_region'),
+    westRegion = $('.west_region'),
+    pacificRegion = $('.pacific_region'),
+    closeButton = $('.map_info_window .close_btn');
 
     // Set Central Region as the initial filter
     //map.setFilter('ye-central-region', ['in', 'postal', 'TX', 'KS', 'MO', 'OK']);
     // map.setFilter('ye-central-region', ['in', 'postal', 'TX', 'KS', 'MO', 'OK', 'AZ', 'MI', 'GA', 'KY', 'AL']);
     //Remove all filters
-  
+
   /////////////scroll area to top//////////////
   function scrollToTop(){
       $('html, .region_display').scrollTop(0);
-    }
+  }
   ////////////////////////////////////////////
-    removeFilter.click(function() {
-        map.setFilter('ye-central-region', ['in', 'postal', ''])
-    });
+  removeFilter.click(function() {
+    map.setFilter('ye-central-region', ['in', 'postal', ''])
+});
 
     //Show Central Regions
     centralRegion.click(function() {
-      var regionTest=getLocationCookie("georgia");
-            if (regionTest == ""){
-              setLocationCookie('location','Central',30);}
+      // var regionTest=getLocationCookie("georgia");
+      // if (regionTest == ""){
+      //     setLocationCookie('location','Central',30);}
       console.log("set");
-        map.setFilter('ye-central-region', ['in', 'postal', 'TX', 'KS', 'MO', 'OK']);
-        map.flyTo({
-            zoom: 5.25,
-            center: [-98.000, 33.503],
-            speed: 1,
-            bearing: 0,
-            pitch: 0,
-            curve: 1
-        });
+      map.setFilter('ye-central-region', ['in', 'postal', 'TX', 'KS', 'MO', 'OK']);
+      map.flyTo({
+        zoom: 5.25,
+        center: [-98.000, 33.503],
+        speed: 1,
+        bearing: 0,
+        pitch: 0,
+        curve: 1
+    });
         //Load JSON data WHERE region is defined as CentralRegion
         //Display CentalRegion Areas LINKS
-      scrollToTop();
+        scrollToTop();
     });
 
     //Show mountainwest Regions
     mountainwestRegion.click(function() {
-      var regionTest=getLocationCookie("georgia");
-            if (regionTest == ""){
-      setLocationCookie('location','MountianWest',30);}
+      // var regionTest=getLocationCookie("georgia");
+      // if (regionTest == ""){
+      //     setLocationCookie('location','MountianWest',30);}
       console.log("set");
-        map.setFilter('ye-central-region', ['in', 'postal', 'AZ']);
-        map.flyTo({
-            zoom: 5.5,
-            center: [-112.230, 34.053],
-            speed: 1,
-            bearing: 0,
-            pitch: 0,
-            curve: 1
-        });
-        
+      map.setFilter('ye-central-region', ['in', 'postal', 'AZ']);
+      map.flyTo({
+        zoom: 5.5,
+        center: [-112.230, 34.053],
+        speed: 1,
+        bearing: 0,
+        pitch: 0,
+        curve: 1
+    });
+
          //$('html, .region_display').animate({scrollTop}, 500);                                    
         //Load JSON data WHERE region is defined as mountainwestRegion
         //Display mountainwestRegion Areas LINKS
-       $('html, .region_display').scrollTop(0); 
+        $('html, .region_display').scrollTop(0); 
     });
 
     //Show Pacific Regions
     pacificRegion.click(function() {
-      var regionTest=getLocationCookie("georgia");
-            if (regionTest == ""){
-      setLocationCookie('location','Pacific',30);}
+      // var regionTest=getLocationCookie("georgia");
+      // if (regionTest == ""){
+      //     setLocationCookie('location','Pacific',30);}
       console.log("set");
-        map.setFilter('ye-central-region', ['in', 'postal', 'CA']);
-        map.flyTo({
-            zoom: 5.5,
-            center: [-118.794, 37.059],
-            speed: 1,
-            bearing: 0,
-            pitch: 0,
-            curve: 1
-        });
-        
+      map.setFilter('ye-central-region', ['in', 'postal', 'CA']);
+      map.flyTo({
+        zoom: 5.5,
+        center: [-118.794, 37.059],
+        speed: 1,
+        bearing: 0,
+        pitch: 0,
+        curve: 1
+    });
+
          //$('html, .region_display').animate({scrollTop}, 500);                                    
         //Load JSON data WHERE region is defined as mountainwestRegion
         //Display mountainwestRegion Areas LINKS
-       $('html, .region_display').scrollTop(0); 
+        $('html, .region_display').scrollTop(0); 
     });
 
     //Show East Regions
     eastRegion.click(function() {
-      var regionTest=getLocationCookie("georgia");
-            if (regionTest == ""){
-      setLocationCookie('location','East',30);}
+      // var regionTest=getLocationCookie("georgia");
+      // if (regionTest == ""){
+      //     setLocationCookie('location','East',30);}
       console.log("set");
-        map.setFilter('ye-central-region', ['in', 'postal', 'GA', 'NC', 'MI', 'KY']);
-        map.flyTo({
-            zoom: 5.25,
-            center: [-85.051, 38.519],
-            speed: 1,
-            bearing: 0,
-            pitch: 0,
-            curve: 1
-        });
-      
+      map.setFilter('ye-central-region', ['in', 'postal', 'GA', 'NC', 'MI', 'KY']);
+      map.flyTo({
+        zoom: 5.25,
+        center: [-85.051, 38.519],
+        speed: 1,
+        bearing: 0,
+        pitch: 0,
+        curve: 1
+    });
+
         //Load JSON data WHERE region is defined as EastRegion
         //Display EastRegion Areas LINKS
-       $('html, .region_display').scrollTop(0); 
+        $('html, .region_display').scrollTop(0); 
     });
 
     var mapInfoWindow = $('.map_info_window'),
-        regionTab = $('.region_tabs .tab'),
-        mapCollapseTab = $('.map_collapse');
+    regionTab = $('.region_tabs .tab'),
+    mapCollapseTab = $('.map_collapse');
 
     //map.on('click', function (event) {
     //    var features = map.queryRenderedFeatures(event.point, { layers: ['ye-central-region'] }),
@@ -146,8 +146,8 @@ map.on('load', function() {
     //    stateName = feature.properties.name;
     //});
 
-    regionTab.click(function(event) {
-        $(this).addClass('active').siblings().removeClass('active');
+regionTab.click(function(event) {
+    $(this).addClass('active').siblings().removeClass('active');
 
         // get the region id
         var regionNodeId = $(this).attr('data-region-node-id');
@@ -163,28 +163,58 @@ map.on('load', function() {
         }
     });
 
-    mapCollapseTab.click(function(event) {
-        $(this).toggleClass('closed');
-        mapInfoWindow.toggleClass('closed');
-    });
+mapCollapseTab.click(function(event) {
+    $(this).toggleClass('closed');
+    mapInfoWindow.toggleClass('closed');
+});
 
-    // show central to start
+    // NEW STARTING POINT BASED OF IP LOCATION KII ROUTES TRAFIC THROUGH GEORGA
+    $.getJSON('//freegeoip.net/json/?callback=?', function(data) {
+      console.log(JSON.stringify(data, null, 2));
+      setRegion(data.time_zone);
+    });
     var centralTab = $('li[data-region-node-id="' + centralNodeId + '"]');
-            var region=getLocationCookie("location");
-            if (region != "") {
-                switch (region) {
-                    case 'MountianWest':
-                    centralTab = $('li[data-region-node-id="' + 130 + '"]');
-                    break;
-                    case 'Central':
-                    centralTab = $('li[data-region-node-id="' + 129 + '"]');
-                    break;
-                    case 'East':
-                    centralTab = $('li[data-region-node-id="' + 131 + '"]');
-                    break;
-                }
-            } 
-    $(centralTab).click();
+    function setRegion(region_name){
+        switch(region_name){
+            case "America/New_York":
+            console.log("Eastern Time Zone");
+            centralTab = $('li[data-region-node-id="' + 131 + '"]');
+            break;
+            case "America/Chicago":
+            console.log("Central Time Zone");
+            centralTab = $('li[data-region-node-id="' + 129 + '"]');
+            break;
+            case "America/Phoenix":
+            console.log("MountianTime");
+            centralTab = $('li[data-region-node-id="' + 130 + '"]');
+            break;
+            case "America/Los_Angeles":
+            console.log("Pasific Time Zone");
+            break;
+            default: 
+            console.log("Default Central Time Zone");
+            centralTab = $('li[data-region-node-id="' + 129 + '"]');
+            console.log("fail");
+        }
+        $(centralTab).click();
+    }
+    // OLD STARTING POINT
+    // var centralTab = $('li[data-region-node-id="' + centralNodeId + '"]');
+    // var region=getLocationCookie("location");
+    // if (region != "") {
+    //     switch (region) {
+    //         case 'MountianWest':
+    //         centralTab = $('li[data-region-node-id="' + 130 + '"]');
+    //         break;
+    //         case 'Central':
+    //         centralTab = $('li[data-region-node-id="' + 129 + '"]');
+    //         break;
+    //         case 'East':
+    //         centralTab = $('li[data-region-node-id="' + 131 + '"]');
+    //         break;
+    //     }
+    // } 
+    // $(centralTab).click();
 });
 function setLocationCookie(cname,cvalue,exdays) {
     var d = new Date();
@@ -287,7 +317,7 @@ function AddSchools(schools) {
     });
     //variables added for use in the clusters
     var highCount = 10,
-        lowCount = 3;
+    lowCount = 3;
 
     map.addSource("schools", {
         "type": "geojson",
@@ -320,7 +350,7 @@ function AddSchools(schools) {
             "text-anchor": "top",
             "text-size": 12,
         },
-         "paint": {"text-color":"white"},
+        "paint": {"text-color":"white"},
         "interactive": true
     });
     ///////////////////////////
@@ -346,8 +376,8 @@ function AddSchools(schools) {
         "type": "circle",
         "source": "schools",
         "filter": [
-            "all", [">", "point_count", lowCount],
-            ["<=", "point_count", highCount]
+        "all", [">", "point_count", lowCount],
+        ["<=", "point_count", highCount]
         ],
         "layout": {},
         "paint": {
@@ -378,10 +408,10 @@ function AddSchools(schools) {
             "text-field": "{point_count}",
             "text-size": 12
                 //"icon-image": "marker-15",
-        },
-        "paint": {"text-color":"white"},
-        "interactive": true
-    });
+            },
+            "paint": {"text-color":"white"},
+            "interactive": true
+        });
 
     ResizeMapToFeatures(schoolPoints);
 }
@@ -473,8 +503,8 @@ function GetAreaDetail(element) {
     var areaManager = {};
     var areaOffice = {};
     var schools = {};
- 
-  var targetDiv = $('.region_display');
+
+    var targetDiv = $('.region_display');
     $('html, .region_display ').animate({
         scrollTop: $(targetDiv).offset().top
     }, 1000);
@@ -553,7 +583,7 @@ function SetSchoolDetails(schools, areaOffice) {
     if ((schools == null) || (schools.length == undefined)) {
         return; }
 
-    $('.regions').prepend('<h4 class="school_area">'+ areaOffice['Name'] +' Area Schools</h4>');
+        $('.regions').prepend('<h4 class="school_area">'+ areaOffice['Name'] +' Area Schools</h4>');
 
     // add new
     $(schools).each(function(key, value) {
