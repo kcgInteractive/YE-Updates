@@ -50,19 +50,19 @@ map.on('load', function() {
 
     //Show Central Regions
     centralRegion.click(function() {
-      var regionTest=getLocationCookie("georgia");
-      if (regionTest == ""){
-          setLocationCookie('location','Central',30);}
-          console.log("set");
-          map.setFilter('ye-central-region', ['in', 'postal', 'TX', 'KS', 'MO', 'OK']);
-          map.flyTo({
-            zoom: 5.25,
-            center: [-98.000, 33.503],
-            speed: 1,
-            bearing: 0,
-            pitch: 0,
-            curve: 1
-        });
+      // var regionTest=getLocationCookie("georgia");
+      // if (regionTest == ""){
+      //     setLocationCookie('location','Central',30);}
+      console.log("set");
+      map.setFilter('ye-central-region', ['in', 'postal', 'TX', 'KS', 'MO', 'OK']);
+      map.flyTo({
+        zoom: 5.25,
+        center: [-98.000, 33.503],
+        speed: 1,
+        bearing: 0,
+        pitch: 0,
+        curve: 1
+    });
         //Load JSON data WHERE region is defined as CentralRegion
         //Display CentalRegion Areas LINKS
         scrollToTop();
@@ -70,19 +70,19 @@ map.on('load', function() {
 
     //Show mountainwest Regions
     mountainwestRegion.click(function() {
-      var regionTest=getLocationCookie("georgia");
-      if (regionTest == ""){
-          setLocationCookie('location','MountianWest',30);}
-          console.log("set");
-          map.setFilter('ye-central-region', ['in', 'postal', 'AZ']);
-          map.flyTo({
-            zoom: 5.5,
-            center: [-112.230, 34.053],
-            speed: 1,
-            bearing: 0,
-            pitch: 0,
-            curve: 1
-        });
+      // var regionTest=getLocationCookie("georgia");
+      // if (regionTest == ""){
+      //     setLocationCookie('location','MountianWest',30);}
+      console.log("set");
+      map.setFilter('ye-central-region', ['in', 'postal', 'AZ']);
+      map.flyTo({
+        zoom: 5.5,
+        center: [-112.230, 34.053],
+        speed: 1,
+        bearing: 0,
+        pitch: 0,
+        curve: 1
+    });
 
          //$('html, .region_display').animate({scrollTop}, 500);                                    
         //Load JSON data WHERE region is defined as mountainwestRegion
@@ -92,19 +92,19 @@ map.on('load', function() {
 
     //Show Pacific Regions
     pacificRegion.click(function() {
-      var regionTest=getLocationCookie("georgia");
-      if (regionTest == ""){
-          setLocationCookie('location','Pacific',30);}
-          console.log("set");
-          map.setFilter('ye-central-region', ['in', 'postal', 'CA']);
-          map.flyTo({
-            zoom: 5.5,
-            center: [-118.794, 37.059],
-            speed: 1,
-            bearing: 0,
-            pitch: 0,
-            curve: 1
-        });
+      // var regionTest=getLocationCookie("georgia");
+      // if (regionTest == ""){
+      //     setLocationCookie('location','Pacific',30);}
+      console.log("set");
+      map.setFilter('ye-central-region', ['in', 'postal', 'CA']);
+      map.flyTo({
+        zoom: 5.5,
+        center: [-118.794, 37.059],
+        speed: 1,
+        bearing: 0,
+        pitch: 0,
+        curve: 1
+    });
 
          //$('html, .region_display').animate({scrollTop}, 500);                                    
         //Load JSON data WHERE region is defined as mountainwestRegion
@@ -114,19 +114,19 @@ map.on('load', function() {
 
     //Show East Regions
     eastRegion.click(function() {
-      var regionTest=getLocationCookie("georgia");
-      if (regionTest == ""){
-          setLocationCookie('location','East',30);}
-          console.log("set");
-          map.setFilter('ye-central-region', ['in', 'postal', 'GA', 'NC', 'MI', 'KY']);
-          map.flyTo({
-            zoom: 5.25,
-            center: [-85.051, 38.519],
-            speed: 1,
-            bearing: 0,
-            pitch: 0,
-            curve: 1
-        });
+      // var regionTest=getLocationCookie("georgia");
+      // if (regionTest == ""){
+      //     setLocationCookie('location','East',30);}
+      console.log("set");
+      map.setFilter('ye-central-region', ['in', 'postal', 'GA', 'NC', 'MI', 'KY']);
+      map.flyTo({
+        zoom: 5.25,
+        center: [-85.051, 38.519],
+        speed: 1,
+        bearing: 0,
+        pitch: 0,
+        curve: 1
+    });
 
         //Load JSON data WHERE region is defined as EastRegion
         //Display EastRegion Areas LINKS
@@ -168,23 +168,53 @@ mapCollapseTab.click(function(event) {
     mapInfoWindow.toggleClass('closed');
 });
 
-    // show central to start
+    // NEW STARTING POINT BASED OF IP LOCATION KII ROUTES TRAFIC THROUGH GEORGA
+    $.getJSON('//freegeoip.net/json/?callback=?', function(data) {
+      console.log(JSON.stringify(data, null, 2));
+      setRegion(data.time_zone);
+    });
     var centralTab = $('li[data-region-node-id="' + centralNodeId + '"]');
-    var region=getLocationCookie("location");
-    if (region != "") {
-        switch (region) {
-            case 'MountianWest':
-            centralTab = $('li[data-region-node-id="' + 130 + '"]');
-            break;
-            case 'Central':
-            centralTab = $('li[data-region-node-id="' + 129 + '"]');
-            break;
-            case 'East':
+    function setRegion(region_name){
+        switch(region_name){
+            case "America/New_York":
+            console.log("Eastern Time Zone");
             centralTab = $('li[data-region-node-id="' + 131 + '"]');
             break;
+            case "America/Chicago":
+            console.log("Central Time Zone");
+            centralTab = $('li[data-region-node-id="' + 129 + '"]');
+            break;
+            case "America/Phoenix":
+            console.log("MountianTime");
+            centralTab = $('li[data-region-node-id="' + 130 + '"]');
+            break;
+            case "America/Los_Angeles":
+            console.log("Pasific Time Zone");
+            break;
+            default: 
+            console.log("Default Central Time Zone");
+            centralTab = $('li[data-region-node-id="' + 129 + '"]');
+            console.log("fail");
         }
-    } 
-    $(centralTab).click();
+        $(centralTab).click();
+    }
+    // OLD STARTING POINT
+    // var centralTab = $('li[data-region-node-id="' + centralNodeId + '"]');
+    // var region=getLocationCookie("location");
+    // if (region != "") {
+    //     switch (region) {
+    //         case 'MountianWest':
+    //         centralTab = $('li[data-region-node-id="' + 130 + '"]');
+    //         break;
+    //         case 'Central':
+    //         centralTab = $('li[data-region-node-id="' + 129 + '"]');
+    //         break;
+    //         case 'East':
+    //         centralTab = $('li[data-region-node-id="' + 131 + '"]');
+    //         break;
+    //     }
+    // } 
+    // $(centralTab).click();
 });
 function setLocationCookie(cname,cvalue,exdays) {
     var d = new Date();
@@ -210,39 +240,9 @@ function getLocationCookie(cname) {
 }
 
 //location scripts 
-var states = [];
 // $.get("http://ipinfo.io", function (response) {
 //     console.log(response.city);
 // }, "jsonp");
-
-$.getJSON('//freegeoip.net/json/?callback=?', function(data) {
-  setRegion(data.region_name);
-});
-function setRegion(region_name){
-    switch(region_name){
-        case "Georgia":
-            console.log("found georga");
-            break;
-        case "North Carolina":
-            console.log("found North Carolina");
-            break;
-        case "Kentucky":
-            console.log("found Kentucky");
-            break;
-        case "Michigan":
-            console.log("found Michigan");
-            break;
-        case "Kansas":
-            console.log("found Kansas");
-            break;
-        case "Georgia":
-            console.log("found georga");
-            break;
-        case "Georgia":
-            console.log("found georga");
-            break;
-    }
-}
 
 // jQuery.getScript('https://maps.google.com/maps/api/js?sensor=false&libraries=drawing&v=3.7');
 
