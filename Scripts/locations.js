@@ -231,6 +231,7 @@ function getLocationCookie(cname) {
         var c = ca[i];
         while (c.charAt(0) == ' ') {
             c = c.substring(1);
+<<<<<<< HEAD
         }
         if (c.indexOf(name) == 0) {
             return c.substring(name.length, c.length);
@@ -264,6 +265,15 @@ function getLocationCookie(cname) {
 //   error('not supported');
 // }
 // });
+=======
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
+>>>>>>> master
 
 
 function ClearSchools() {
