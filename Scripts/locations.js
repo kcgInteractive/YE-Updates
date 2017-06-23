@@ -285,6 +285,16 @@ function GetFeatureForSchool(school) {
 function AddSchools(schools) {
     var schoolPoints = [];
 
+    //Use Address Geocoding 
+
+    // $(schools).each(function(key, value) {
+    //     var feature = GetFeatureForSchool(value);
+    //     var latitude = feature.geometry.coordinates[0];
+    //     var longitude = feature.geometry.coordinates[1];
+
+    
+    //Use defined Lat/Long
+
     $(schools).each(function(key, value) {
         var longitude = value.Longitude;
         var latitude = value.Latitude;
@@ -305,6 +315,7 @@ function AddSchools(schools) {
             geometry: {
                 type: "Point",
                 coordinates: [longitude, latitude]
+                // coordinates: [latitude, longitude]
             },
             properties: {
                 "marker-symbol": "marker-15",
