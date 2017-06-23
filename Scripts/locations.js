@@ -190,6 +190,7 @@ mapCollapseTab.click(function(event) {
             break;
             case "America/Los_Angeles":
             console.log("Pasific Time Zone");
+            centralTab = $('li[data-region-node-id="' + 509 + '"]');
             break;
             default: 
             console.log("Default Central Time Zone");
