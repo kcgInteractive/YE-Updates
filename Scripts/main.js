@@ -309,8 +309,17 @@ smoothScrolling();
 }
 /*--END FAQ NAVIGATION--*/
 
+/*--SOCIAL SHARING LINK CREATION--*/
 
-
+$('.social-sharing a').each(function() {
+  var socialLink = $(this).attr('href');
+  var postUrl = window.location.href;
+  var sharingLink = socialLink.concat(postUrl);
+  
+  $(this).attr('href', sharingLink);
+  console.log(sharingLink);
+});
+/*--END SOCIAL SHARING LINK CREATION--*/
 
 
 /*--VIDEO FRAME SCALING--*/
