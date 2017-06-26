@@ -293,7 +293,7 @@ function AddSchools(schools) {
     //     var longitude = feature.geometry.coordinates[1];
 
     
-    //Use defined Lat/Long
+    //Use defined Lat/Long with Geocoding fallback
 
     $(schools).each(function(key, value) {
         var longitude = value.Longitude;
