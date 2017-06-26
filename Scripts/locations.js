@@ -168,38 +168,9 @@ mapCollapseTab.click(function(event) {
     mapInfoWindow.toggleClass('closed');
 });
 
-    // NEW STARTING POINT BASED OF IP LOCATION KII ROUTES TRAFIC THROUGH GEORGA
-    $.getJSON('//freegeoip.net/json/?callback=?', function(data) {
-      console.log(JSON.stringify(data, null, 2));
-      setRegion(data.time_zone);
-    });
-    var centralTab = $('li[data-region-node-id="' + centralNodeId + '"]');
-    function setRegion(region_name){
-        switch(region_name){
-            case "America/New_York":
-            console.log("Eastern Time Zone");
-            centralTab = $('li[data-region-node-id="' + 131 + '"]');
-            break;
-            case "America/Chicago":
-            console.log("Central Time Zone");
-            centralTab = $('li[data-region-node-id="' + 129 + '"]');
-            break;
-            case "America/Phoenix":
-            console.log("MountianTime");
-            centralTab = $('li[data-region-node-id="' + 130 + '"]');
-            break;
-            case "America/Los_Angeles":
-            console.log("Pasific Time Zone");
-            centralTab = $('li[data-region-node-id="' + 509 + '"]');
-            break;
-            default: 
-            console.log("Default Central Time Zone");
-            centralTab = $('li[data-region-node-id="' + 129 + '"]');
-            console.log("fail");
-        }
-        $(centralTab).click();
-    }
-    // OLD STARTING POINT
+
+$(centralTab).click();
+        // OLD STARTING POINT
     // var centralTab = $('li[data-region-node-id="' + centralNodeId + '"]');
     // var region=getLocationCookie("location");
     // if (region != "") {
