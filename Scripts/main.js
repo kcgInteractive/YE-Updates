@@ -317,7 +317,6 @@ $('.social-sharing a').each(function() {
   var sharingLink = socialLink.concat(postUrl);
   
   $(this).attr('href', sharingLink);
-  console.log(sharingLink);
 });
 /*--END SOCIAL SHARING LINK CREATION--*/
 
