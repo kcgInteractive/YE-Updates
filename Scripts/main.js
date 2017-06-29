@@ -156,7 +156,28 @@ mobileNav();
 // $('header').removerClass('nav-down')
 /*--END STICKY NAVIGATION--*/
 
+/*--NEXT ARTICLE CTA--*/
+var scrollTrigger = false;
+// console.log($(document).height()*.1);
+// console.log($(document).height());
 
+$(window).scroll(function() {
+    if ($(this).scrollTop() >= ($(document).height()*.2) && !scrollTrigger ) { // this refers to window
+        $('.next_article_cta_container').removeClass('hidden');
+        scrollTrigger = true;
+    }
+});
+
+$('.close_next_article_cta_container_icon').click(function(event){
+    $('.next_article_cta_container').addClass('teased');
+    event.stopPropagation();
+});
+
+$('.next_article_tease_button').click(function(event){
+    $('.next_article_cta_container').removeClass('teased')
+    event.stopPropagation();
+});
+/*--END NEXT ARTICLE CTA--*/
 
 
 
