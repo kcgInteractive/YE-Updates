@@ -41,9 +41,6 @@ var faqPage = $('.faq_page');
 /*--END GLOBALS--*/
 
 
-
-
-
 /*--DESKTOP NAVIGATION--*/
 var tabIndex =1;
 // $('header').click();
@@ -79,12 +76,10 @@ function desktopNav() {
 		if ($(this).is(':contains("Contact Us")')) {
 			$('.site_links li span').removeClass('active');
 			$('.site_links li ul').slideUp();
-			console.log(this);
 		}
 		else if ($(this).is(':contains("About")')) {
 			$('.site_links li span').removeClass('active');
 			$('.site_links li ul').slideUp();
-			console.log(this);
 		}
 	});
 	$('.adaSkip').focus(function(){$(this).css('top', '0px')});
