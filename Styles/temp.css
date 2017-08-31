@@ -1,9 +1,19 @@
+/* SAFARI Mobile Nav Hack by CD 20170717 */
+header {
+  right: 0;
+}
+.mobileNavOpen header {
+  right: 15rem;
+}
+
 /*Temp Styles by M.A.R. 20161108*/
 header {
   height: auto;
   position: fixed;
   top: 0;
-  transition: top 0.2s ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
   width: 100%;
   z-index:9999;
 }
@@ -210,7 +220,7 @@ select {
 }
 .ye-academy-goals li:first-child p {
   position:relative;
-  top:-30px;
+  /*top:-30px;*/
 }
 .ye-academy-goals li:last-child img {
   height:auto;
@@ -758,6 +768,36 @@ footer .social_links li a {
 .row-margin.stats_mod {
   padding:7.50rem 0;
   margin:4.688rem auto 2rem;
+  /*position: relative;*/
+}
+.stats_mod.vsi{
+  padding: 0;
+  margin: 0.688rem auto 2rem;
+}
+.vsi .stat_container{
+  margin-right: 10%!important;
+  height: 10.5rem;
+  width: 10.5rem;
+}
+.vsi .stat_container:last-of-type{
+  margin-right: 0!important;
+  height: 8rem;
+  width: 15rem;
+  margin-bottom: 1rem;
+}
+.vsi .stat_container .stat_content .stat_desc {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.vsi .stat_container .stat_content {
+  position: relative;height: 100%;top: 0;
+}
+@media screen and (min-width: 40em) and (max-width: 63.9375em) {
+  .vsi .stat_container{
+    margin-right: 4%!important;
+  }
 }
 .general-copy-w-bg {
   padding:7.50rem 0;
@@ -898,15 +938,15 @@ p.copyright {
 
 
 .sponsors {
- -ms-box-orient: horizontal;
- box-orient:horizontal;
- display: flex;
- -webkit-flex-wrap: wrap;
- flex-wrap: wrap;
- justify-content:center;
- -webkit-justify-content:center;
- align-content:center;
- -webkit-align-content:center;
+  -ms-box-orient: horizontal;
+  box-orient:horizontal;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  justify-content:center;
+  -webkit-justify-content:center;
+  align-content:center;
+  -webkit-align-content:center;
 }
 .sponsor-container {
   display: flex;
@@ -1704,17 +1744,4 @@ p.speaker_name {
 @media (max-width: 639px) {
   .upcoming-events .max_width_container h3{padding: 1rem 1.5rem;}
   .past-events .max_width_container h3{padding: 1rem 1.5rem;margin-top:1em;}
-}
-.adaSkip{
-  background: #1a6e03;
-  padding: 1rem;
-  position: absolute;
-  left: 166px;
-  top: -60px;
-  z-index: 1000;
-  color: white;
-  text-decoration: underline;
-  -webkit-transition: all 0.25s ease-in-out;
-  -moz-transition: all 0.25s ease-in-out;
-  transition: all 0.25s ease-in-out;
 }
