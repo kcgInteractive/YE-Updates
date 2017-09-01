@@ -774,16 +774,24 @@ footer .social_links li a {
   padding: 0;
   margin: 0.688rem auto 2rem;
 }
+.vsi{
+  display: flex;
+  justify-content: space-between;
+}
 .vsi .stat_container{
-  margin-right: 10%!important;
   height: 10.5rem;
   width: 10.5rem;
+}
+.vsi .stat_number{
+  transform: translate(0%, 30%);
+  position: relative;
+  top: 50%;
 }
 .vsi .stat_container:last-of-type{
   margin-right: 0!important;
   height: 8rem;
   width: 15rem;
-  margin-bottom: 1rem;
+  margin: auto;
 }
 .vsi .stat_container .stat_content .stat_desc {
   position: absolute;
@@ -797,6 +805,19 @@ footer .social_links li a {
 @media screen and (min-width: 40em) and (max-width: 63.9375em) {
   .vsi .stat_container{
     margin-right: 4%!important;
+  }
+}
+@media screen and (max-width: 39.9375em) {
+  .vsi{
+    display: block;
+  }
+  .vsi .stat_container{
+    margin-right: auto!important;
+    margin-left: auto!important;
+    display: block;
+  }
+  .vsi .stat_container:last-of-type{
+    margin-right: auto!important;
   }
 }
 .general-copy-w-bg {
